@@ -1,0 +1,23 @@
+{% if pagination.last_page > 1 %}
+    <div class="pagination">
+        <a href="{{path('cat_show',{'slug':category.slug, 'page':1})}}">Première page</a>
+
+        {% if pagination.page > 1 %}
+            <a href="{{path('cat_show',{'slug':category.slug, 'page': pagination.page-1})}}"> Prec. </a>
+        {% endif %}
+
+        {% for page in 1..pagination.last_page %}
+            {% if page == pagination.page %}
+                {{page}}
+            {% else %}
+                <a href="{{path('cat_show',{'slug':category.slug, 'page':page})}}">{{page}}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if pagination.page < pagination.last_page %}
+            <a href="{{path('cat_show',{'slug':category.slug, 'page':pagination.page+1})}}"> Suiv. </a>
+        {% endif %}
+
+        <a href="{{path('cat_show',{'slug':category.slug, 'page':pagination.last_page})}}"> Fin </a>
+
+{% endif %}

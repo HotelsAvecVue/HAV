@@ -1,0 +1,3 @@
+cat_show:
+    path: /{slug}/{page}
+    defaults: {_controller: "JobeetBundle:Category:show", page: 1}

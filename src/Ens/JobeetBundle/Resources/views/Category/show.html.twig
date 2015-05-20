@@ -1,0 +1,27 @@
+{% extends 'JobeetBundle::layout.html.twig' %}
+
+{% block title %}
+    Jobs in {{category.name}}
+{% endblock %}
+
+{% block stylesheets %}
+    {{parent()}}
+    <link rel="stylesheet" href="{{asset('bundles/jobeet/css/jobs.css')}}" type="text/css" media="all" />
+{% endblock %}
+
+
+{% block content %}
+    <div class="category">
+        <div class="feed">
+            <a href="">Feed</a>
+        </div>
+        <h1>{{category.name}}</h1>
+    </div>
+
+    <!-- Include : liste jobs -->
+    {% include 'JobeetBundle:Job:list.html.twig' with {'jobs': category.activejobs} %}
+
+    <!-- Include : pagination -->
+    {% include 'JobeetBundle:Category:pagination.html.twig' with {'pagination': pagination} %}
+    
+{% endblock %}

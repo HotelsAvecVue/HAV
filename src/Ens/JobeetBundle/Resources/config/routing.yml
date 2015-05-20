@@ -1,0 +1,11 @@
+jobeet_job:
+    resource: "@JobeetBundle/Resources/config/routing/job.yml"
+    prefix:   /job
+
+jobeet_homepage:
+    pattern: /
+    defaults: { _controller: JobeetBundle:Job:index }
+
+jobeet_category:
+    resource: "@JobeetBundle/Resources/config/routing/category.yml"
+    prefix: /category
