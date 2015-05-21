@@ -4,6 +4,16 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    jobeet.admin.category:
+        class: Ens\JobeetBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: jobeet, label: Catégories }
+        arguments: [null, Ens\JobeetBundle\Entity\Category, JobeetBundle:CategoryAdmin ]
+        
+    jobeet.admin.job:
+        class: Ens\JobeetBundle\Admin\JobAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, groupe: jobeet, label: Offres d'emploi }
+        arguments: [ null, Ens\JobeetBundle\Entity\Job, JobeetBundle:JobAdmin ]
+
+
