@@ -19,6 +19,16 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Ens\JobeetBundle\JobeetBundle(),
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\CacheBundle\SonataCacheBundle(),
+            
+            
+            
+            
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

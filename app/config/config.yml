@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -73,4 +73,16 @@ swiftmailer:
     spool:     { type: memory }
     
     
+# Sonata Configuration
+sonata_admin:
+    title: Admin HAV
 
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+            
+        sonata.block.service.text:
+        sonata.block.service.action:
+        sonata.block.service.rss:
