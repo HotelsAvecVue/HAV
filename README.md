@@ -10,3 +10,4 @@ Objectif :
 - Incorporer des modules de gestion
 - Incorporer des modules orientés SEO
 - Incorporer des modules de statistiques sur le traffic
+- Utiliser au maximum des outils Open Source
