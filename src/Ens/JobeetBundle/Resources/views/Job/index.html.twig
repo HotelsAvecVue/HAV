@@ -12,7 +12,7 @@
             <div class="feed">
               <a href="">Feed</a>
             </div>
-              <h1><a href="{{ path('cat_show', {'slug': category.getSlugName} ) }}">{{category.name}}</a></h1>
+              <h1><a href="{{ path('category_show', {'slug': category.getSlugName} ) }}">{{category.name}}</a></h1>
           </div>
           
           <!-- Include : liste jobs -->
@@ -20,7 +20,7 @@
           
           {% if category.moreJobs %}
               <div class="more_jobs">
-                  and <a href="{{ path('cat_show', {'slug': category.getSlugName})}}">{{ category.moreJobs }} </a>
+                  and <a href="{{ path('category_show', {'slug': category.getSlugName})}}">{{ category.moreJobs }} </a>
                   more...
               </div>
           {% endif %}

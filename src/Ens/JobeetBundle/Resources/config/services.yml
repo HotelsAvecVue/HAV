@@ -2,3 +2,18 @@ services:
 #    jobeet.example:
 #        class: Ens\JobeetBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+
+        
+    admin.job:
+        class: Ens\JobeetBundle\Admin\JobAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: jobeet, label: Offres d'emploi }
+        arguments: [ null, Ens\JobeetBundle\Entity\Job, JobeetBundle:JobAdmin ]
+
+
+    admin.category:
+        class: Ens\JobeetBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: jobeet, label: Categories }
+        arguments: [ null, Ens\JobeetBundle\Entity\Category, JobeetBundle:CategoryAdmin ]

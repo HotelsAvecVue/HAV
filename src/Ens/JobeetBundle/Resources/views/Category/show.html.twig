@@ -1,27 +1,36 @@
-{% extends 'JobeetBundle::layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
-{% block title %}
-    Jobs in {{category.name}}
-{% endblock %}
+{% block body -%}
+    <h1>Category</h1>
 
-{% block stylesheets %}
-    {{parent()}}
-    <link rel="stylesheet" href="{{asset('bundles/jobeet/css/jobs.css')}}" type="text/css" media="all" />
-{% endblock %}
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ entity.slug }}</td>
+            </tr>
+        </tbody>
+    </table>
 
-
-{% block content %}
-    <div class="category">
-        <div class="feed">
-            <a href="">Feed</a>
-        </div>
-        <h1>{{category.name}}</h1>
-    </div>
-
-    <!-- Include : liste jobs -->
-    {% include 'JobeetBundle:Job:list.html.twig' with {'jobs': category.activejobs} %}
-
-    <!-- Include : pagination -->
-    {% include 'JobeetBundle:Category:pagination.html.twig' with {'pagination': pagination} %}
-    
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('category') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('category_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
 {% endblock %}
